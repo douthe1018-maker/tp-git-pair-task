@@ -8,7 +8,7 @@ def berakna_rabatt(pris: float, rabatt_procent: float) -> float:
     Exempel: berakna_rabatt(100, 20) ska returnera 80.0
     """
     # BUGG: Just nu lägger den till rabatten istället för att dra ifrån!
-    slutpris = pris + (pris * (rabatt_procent / 100))
+    slutpris = pris - (pris * (rabatt_procent / 100))
     return slutpris
 
 
@@ -22,9 +22,10 @@ def validera_anvandarnamn(anvandarnamn: str) -> bool:
     Annars ska den returnera False.
     """
     
-    # TODO: Skriv en if-sats som kollar om anvandarnamn är minst 5 tecken långt (använd len()).
-    # Just nu returnerar den alltid False.
-    
+    if len(anvandarnamn) >= 5:
+        return True
+    else:
+        return False
 
 
 # ==========================================
